@@ -1,0 +1,119 @@
+#include "FirebaseESP8266.h"
+#include <WiFiManager.h>
+#include <Servo.h>
+
+#define FIREBASE_HOST "anderson-39bae-default-rtdb.firebaseio.com/"
+#define FIREBASE_AUTH "Sz9U6Zg1jyDJFBlgBJke0vvaCZBvLGZCB4JWWI4H"
+
+int led = D2;  //Quando conectado
+
+Servo camera;  //Servo motor
+
+
+int servo = D3;  //Saida para servo motor
+
+FirebaseData ledData; 
+
+FirebaseJson json;
+
+void setup() {
+
+  camera.attach(servo);  //Saida para servo motor
+
+
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+  Firebase.reconnectWiFi(true);
+
+  pinMode(led, OUTPUT);
+  digitalWrite(led, HIGH); 
+
+
+  Serial.begin(115200);
+
+  WiFiManager wifiManager;
+  //wifiManager.resetSettings();
+  wifiManager.autoConnect("IOT Mariano");
+  Serial.println("connected...yeey :)");
+}
+
+void loop() {
+
+  
+
+  if (Firebase.getString(ledData, "camera1")) {  //Controle angulo 0, 20, 40, 70, 90 graus
+    Serial.println(ledData.stringData());
+    if (ledData.stringData() == "0") {
+      digitalWrite(led, HIGH);
+      camera.write(0);  //Angulo do motor 50 graus
+
+    } else if (ledData.stringData() == "180") {
+      digitalWrite(led, LOW);  //Desliga o servo e o drive
+      
+    }
+
+    if (ledData.stringData() == "1") {     
+      camera.write(10);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "2") {     
+      camera.write(20);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "3") {     
+      camera.write(30);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "4") {     
+      camera.write(40);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "5") {     
+      camera.write(50);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "6") {     
+      camera.write(60);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "7") {     
+      camera.write(70);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "8") {     
+      camera.write(80);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "9") {     
+      camera.write(90);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "10") {     
+      camera.write(100);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "11") {     
+      camera.write(110);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "12") {     
+      camera.write(120);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "13") {     
+      camera.write(130);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "14") {     
+      camera.write(140);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "15") {     
+      camera.write(150);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "16") {     
+      camera.write(160);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "17") {     
+      camera.write(170);  //Angulo do motor 50 graus
+    }
+    if (ledData.stringData() == "18") {     
+      camera.write(180);  //Angulo do motor 50 graus
+    }
+
+
+
+  }
+
+  
+
+  
+
+  
+
+}
