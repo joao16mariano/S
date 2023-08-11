@@ -14,6 +14,9 @@ int led5 = D5;  //90 graus
 int led6 = D6;  // 190 graus
 
 Neotimer piscaD0 = Neotimer(500);  //Pisca quando conectado
+Neotimer posicao = Neotimer(100);
+Neotimer posicao1 = Neotimer(300);
+Neotimer posicao2 = Neotimer(500);
 
 Servo camera;  //Servo motor
 
@@ -96,6 +99,9 @@ void setup() {
   digitalWrite(led8, LOW);
   delay(4000);
   digitalWrite(led8, HIGH);
+  digitalWrite(led8, LOW);
+  delay(300000);
+  digitalWrite(led8, HIGH);
 */
 
 
@@ -126,161 +132,340 @@ void loop() {
 
     if (ledData.stringData() == "0") {
       camera.write(0);  //Angulo do motor 50 graus
-      digitalWrite(led3, HIGH);
-   
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "1") {
       camera.write(5);  //Angulo do motor 50 graus
-      digitalWrite(led3, HIGH);
-    
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "2") {
       camera.write(10);  //Angulo do motor 50 graus
-      digitalWrite(led3, HIGH);
-    } else {
-      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "3") {
       camera.write(15);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "4") {
       camera.write(20);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "5") {
       camera.write(25);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "6") {
       camera.write(30);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "7") {
       camera.write(35);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "8") {
       camera.write(40);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "9") {
       camera.write(45);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "10") {
       camera.write(50);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "11") {
       camera.write(55);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "12") {
       camera.write(60);  //Angulo do motor 50 graus
+      digitalWrite(led5, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao.repeat()) {
+        digitalWrite(led3, !digitalRead(led3));
+      }
     }
 
     if (ledData.stringData() == "13") {
       camera.write(65);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
 
     if (ledData.stringData() == "14") {
       camera.write(70);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
 
     if (ledData.stringData() == "15") {
       camera.write(75);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
 
     if (ledData.stringData() == "16") {
       camera.write(80);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
     if (ledData.stringData() == "17") {
       camera.write(85);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
 
     if (ledData.stringData() == "18") {
       camera.write(90);  //Angulo do motor 50 graus
-      digitalWrite(led5, HIGH);
-    
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
 
 
     if (ledData.stringData() == "19") {
       camera.write(95);  //Angulo do motor 50 graus
-       digitalWrite(led5, HIGH);
-    
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
-    
+
     if (ledData.stringData() == "20") {
       camera.write(100);  //Angulo do motor 50 graus
-       digitalWrite(led5, HIGH);
-    
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
-   
+
     if (ledData.stringData() == "21") {
       camera.write(105);  //Angulo do motor 50 graus
-       digitalWrite(led5, HIGH);
-    } else {
-      digitalWrite(led5, LOW);
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
-    
+
     if (ledData.stringData() == "22") {
       camera.write(110);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
     if (ledData.stringData() == "23") {
       camera.write(115);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
     if (ledData.stringData() == "24") {
       camera.write(120);  //Angulo do motor 50 graus
+     digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
     if (ledData.stringData() == "25") {
       camera.write(125);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led6, LOW);
+      if (posicao1.repeat()) {
+      digitalWrite(led5, !digitalRead(led5));
+      }
     }
     if (ledData.stringData() == "26") {
       camera.write(130);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "27") {
       camera.write(135);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "28") {
       camera.write(140);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "29") {
       camera.write(145);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "30") {
       camera.write(150);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "31") {
       camera.write(155);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "32") {
       camera.write(160);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "33") {
       camera.write(165);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "34") {
       camera.write(170);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "35") {
       camera.write(175);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
     if (ledData.stringData() == "36") {
       camera.write(180);  //Angulo do motor 50 graus
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
+
+
     if (ledData.stringData() == "37") {
       camera.write(185);  //Angulo do motor 50 graus
+     digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
+
     if (ledData.stringData() == "38") {
       camera.write(190);  //Angulo do motor 50 graus
-      digitalWrite(led6, HIGH);
-    } else {
-      digitalWrite(led6, LOW);
+      digitalWrite(led3, LOW);
+      digitalWrite(led5, LOW);
+      if (posicao2.repeat()) {
+      digitalWrite(led6, !digitalRead(led6));
+      }
     }
   }
 }
